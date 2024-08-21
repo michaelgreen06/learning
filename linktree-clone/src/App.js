@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Button from "./Components/Button/Button";
+import Logo from "./Components/Logo/Logo";
 
 function App() {
   const urls = [
@@ -13,18 +14,19 @@ function App() {
   return (
     <div className="App">
       <header className="">
-        <div>
-          {urls.map((element, index) => {
-            return (
-              <Button
-                key={index}
-                url={element.url}
-                description={element.description}
-              />
-            );
-          })}
-        </div>
+        <Logo />
       </header>
+      <section>
+        {urls.map((element, index) => {
+          return (
+            <Button
+              key={index}
+              url={element.url}
+              description={element.description}
+            />
+          );
+        })}
+      </section>
     </div>
   );
 }
